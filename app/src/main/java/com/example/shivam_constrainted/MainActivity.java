@@ -15,16 +15,16 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     boolean show = false;
-    ConstraintLayout cc1;
+    ConstraintLayout cl_initial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cc1 = findViewById(R.id.cc1);
+        cl_initial = findViewById(R.id.cl_initial);
 
-        imageView = findViewById(R.id.backgroundImage);
+        imageView = findViewById(R.id.iv_main);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         transition.setInterpolator(new AnticipateInterpolator(1.0f));
         transition.setDuration(1200);
 
-        TransitionManager.beginDelayedTransition(cc1, transition);
-        constraintSet.applyTo(cc1);
+        TransitionManager.beginDelayedTransition(cl_initial, transition);
+        constraintSet.applyTo(cl_initial);
     }
 
     private void revertAnimation() {
@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         transition.setInterpolator(new AnticipateInterpolator(1.0f));
         transition.setDuration(1200);
 
-        TransitionManager.beginDelayedTransition(cc1, transition);
-        constraintSet.applyTo(cc1);
+        TransitionManager.beginDelayedTransition(cl_initial, transition);
+        constraintSet.applyTo(cl_initial);
 
     }
 
